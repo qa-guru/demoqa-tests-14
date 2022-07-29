@@ -28,7 +28,6 @@ public class TextBoxTests {
         $("#permanentAddress").setValue("Another address 1");
         $("#submit").click();
 
-        $("#submit").click();
         $("#output #name").shouldHave(text("Egor"));
 //        $("#output").$("#name").shouldHave(text("Egor"));
 //        $("#output").shouldHave(text("Egor"));
@@ -37,6 +36,5 @@ public class TextBoxTests {
         $("#output #currentAddress").shouldHave(text("Some address 1"));
         $("#output #permanentAddress").shouldHave(text("Another address 1"));
     }
-
 
 }
