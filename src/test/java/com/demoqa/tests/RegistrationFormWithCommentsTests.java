@@ -1,18 +1,15 @@
-package com.demoqa;
+package com.demoqa.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.by;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationFormTests {
+public class RegistrationFormWithCommentsTests {
 
     @BeforeAll
     static void configure() {
@@ -64,9 +61,9 @@ public class RegistrationFormTests {
         $(".modal-dialog").should(appear);
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
 
-        $("#table-responsive table").shouldHave(text("Alex"), text("Egorov"),
+        $(".table-responsive table").shouldHave(text("Alex"), text("Egorov"),
                 text("alex@egorov.com"), text("1234567890"));
-//        $("#table-responsive table").$(byText("Date of Birth"))
+//        $(".table-responsive table").$(byText("Date of Birth"))
 //                .parent().shouldHave(text("30 July,2008"));
     }
 
